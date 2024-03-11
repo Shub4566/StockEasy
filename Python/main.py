@@ -1,10 +1,7 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 import home, about,stock, Chatforums, account
-from firebase_admin import credentials
-from firebase_admin import auth
-cred = credentials.Certificate('stockeasy-f3ac0-140c00ab9b02.json')
-firebase_admin.initialize_app(cred)
+
     
 
 st.set_page_config(
