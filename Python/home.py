@@ -58,15 +58,18 @@ def app():
 
             st.success('Post uploaded!!')
 
-    st.header(':violet[Latest Posts] ')
+    st.header(':violet[All Posts] ')
 
     docs = db.collection('Posts').get()
+
+    # Reverse the order of documents
+    docs = reversed(docs)
 
     for doc in docs:
         d = doc.to_dict()
         try:
-            st.text_area(label=':green[Posted by:] ' + ':orange[{}]'.format(d['Username']),
-                         value=d['Content'][-1], height=200, key=doc.id)
+            for post_content in reversed(d['Content']):
+                st.text_area(label=':green[Posted by:] ' + ':orange[{}]'.format(d['Username']),
+                            value=post_content, height=200, key=f"{doc.id}_{post_content}")
         except:
             pass
-

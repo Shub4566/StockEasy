@@ -2,8 +2,6 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 import home, about,stock, Chatforums, account
 
-    
-
 st.set_page_config(
     page_title="StockEasy",
     layout="wide"  # Set layout to wide to occupy full width

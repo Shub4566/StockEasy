@@ -1,11 +1,13 @@
 import streamlit as st
 import firebase_admin
 
-
 from firebase_admin import credentials
 from firebase_admin import auth
+
+
 cred = credentials.Certificate('stockeasy-f3ac0-140c00ab9b02.json')
-firebase_admin.initialize_app(cred)
+# firebase_admin.initialize_app(cred)
+
 
 
 #if not firebase_admin._apps:
